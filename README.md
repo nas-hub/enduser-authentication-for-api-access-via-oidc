@@ -15,7 +15,7 @@ Any Identity Provider that supports OIDC. This solution has been tested with the
 
 - [Google IAM](https://developers.google.com/identity/protocols/OpenIDConnect).
 - [Okta](https://developer.okta.com/docs/api/resources/oidc/#endpoints)
-- [PingFederate](https://documentation.pingidentity.com/pingfederate/pf84/#adminGuide/concept/openIdConnect.html) and 
+- [PingFederate](https://documentation.pingidentity.com/pingfederate/pf84/#adminGuide/concept/openIdConnect.html) 
 
 **User Agent Module** : 
 
@@ -143,7 +143,7 @@ At this point the solution should be deployed on your Apigee Org, and should be 
 3. Click Update after importing the json config file.
 4. You should be on login page that has Login button.
 5. Clicking the Login Button will initiate a OIDC based login with your Identity Provider via Apigee. You can also turn on the **trace** for this proxy on Apigee to see the proxy functionality.
-6. At this point you should have Access Token issued by Apigee and should be able to introspect the token, as well as invoke APIs with this token
+6. At this point you should have Access Token issued by Apigee and should be able to introspect the token, as well as invoke APIs with this token.
 
 ### Troubleshooting
 
