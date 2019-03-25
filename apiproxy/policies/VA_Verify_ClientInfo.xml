@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<VerifyAPIKey async="false" continueOnError="false" enabled="true" name="VA_Verify_ClientInfo">
+    <DisplayName>VA_Verify_ClientInfo</DisplayName>
+    <Properties/>
+    <APIKey ref="originalClientId"/>
+</VerifyAPIKey>

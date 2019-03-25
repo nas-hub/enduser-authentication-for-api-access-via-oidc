@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<PopulateCache async="false" continueOnError="false" enabled="true" name="PC_Cache_JWKS">
+    <DisplayName>PC_Cache_JWKS</DisplayName>
+    <Properties/>
+    <CacheKey>
+        <Prefix>JWKS_CACHE</Prefix>
+        <KeyFragment ref="idp.issuer"/>
+        <KeyFragment>jwks_payload</KeyFragment>
+    </CacheKey>
+    <CacheResource>JWKS_CACHE</CacheResource>
+    <Scope>Exclusive</Scope>
+    <ExpirySettings>
+        <TimeoutInSec>3600</TimeoutInSec>
+    </ExpirySettings>
+    <Source>jwks_payload</Source>
+</PopulateCache>

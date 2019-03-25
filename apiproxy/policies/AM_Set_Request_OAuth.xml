@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<AssignMessage async="false" continueOnError="false" enabled="true" name="AM_Set_Request_OAuth">
+    <DisplayName>AM_Set_Request_OAuth</DisplayName>
+    <IgnoreUnresolvedVariables>true</IgnoreUnresolvedVariables>
+    <!-- We are setting the OAuth credentials here to better match the RFC 7523 standard -->
+    <Add>
+        <FormParams>
+            <!--<FormParam name="grant_type">client_credentials</FormParam>
+            <FormParam name="client_id">{originalClientId}</FormParam>-->
+            <FormParam name="grant_type">password</FormParam>
+            <FormParam name="client_id">{originalClientId}</FormParam>
+            <FormParam name="client_secret">{verifyapikey.VA_Verify_ClientInfo.client_secret}</FormParam>
+            <FormParam name="username">{subject.email}</FormParam>
+            <FormParam name="password">{subject.email}</FormParam>
+        </FormParams>
+    </Add>
+    <AssignTo createNew="false" transport="http" type="request"/>
+</AssignMessage>

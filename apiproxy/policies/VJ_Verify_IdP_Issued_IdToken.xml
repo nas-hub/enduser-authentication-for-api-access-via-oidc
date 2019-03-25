@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<VerifyJWT async="false" continueOnError="true" enabled="true" name="VJ_Verify_IdP_Issued_IdToken">
+    <DisplayName>VJ_Verify_IdP_Issued_IdToken</DisplayName>
+    <Algorithm>RS256</Algorithm>
+    <Source>id_token</Source>
+    <PublicKey>
+        <JWKS ref="jwks_payload"/>
+    </PublicKey>
+    <Issuer ref="idp.issuer"/>
+    <Audience ref="idp.audience"/>
+</VerifyJWT>

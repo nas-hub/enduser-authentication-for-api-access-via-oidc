@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<AssignMessage async="false" continueOnError="false" enabled="true" name="AM_Send_Redirect_To_Target">
+    <DisplayName>AM_Send_Redirect_To_Target</DisplayName>
+    <IgnoreUnresolvedVariables>true</IgnoreUnresolvedVariables>
+    <!-- see https://apigeesc.atlassian.net/browse/BID-5589 -->
+    <AssignTo createNew="true" type="response">response</AssignTo>
+    <Remove>
+        <Payload>true</Payload>
+    </Remove>
+    <Set>
+        <StatusCode>302</StatusCode>
+        <ReasonPhrase>Found</ReasonPhrase>
+        <Headers>
+            <Header name="Location">{target}?access_token={apigee.access_token}&amp;email={subject.email}&amp;name={subject.name}</Header>
+        </Headers>
+    </Set>
+    <!-- Set this flow variable to indicate the response has been set -->
+    <AssignVariable>
+        <Name>flowResponse.ready</Name>
+        <Value>true</Value>
+    </AssignVariable>
+</AssignMessage>

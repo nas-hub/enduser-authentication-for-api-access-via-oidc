@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<KeyValueMapOperations async="false" continueOnError="false" enabled="true" name="KV_Retrieve_IdP_Info" mapIdentifier="@kvm_idp_config_name@">
+    <DisplayName>KV_Retrieve_IdP_Info</DisplayName>
+    <ExpiryTimeInSecs>5</ExpiryTimeInSecs>
+    <Get assignTo="idp.redirect_uri" index="1">
+        <Key>
+            <Parameter>idp.redirect_uri</Parameter>
+        </Key>
+    </Get>
+    <Get assignTo="idp.client_id" index="1">
+        <Key>
+            <Parameter>idp.client.id</Parameter>
+        </Key>
+    </Get>
+    <Get assignTo="idp.client_secret" index="1">
+        <Key>
+            <Parameter>idp.client.secret</Parameter>
+        </Key>
+    </Get>
+    <Get assignTo="idp.scope">
+        <Key>
+            <Parameter>idp.scope</Parameter>
+        </Key>
+    </Get>
+    <Get assignTo="idp.audience">
+        <Key>
+            <Parameter>idp.audience</Parameter>
+        </Key>
+    </Get>
+    <Get assignTo="idp.token.endpoint">
+        <Key>
+            <Parameter>idp.atz_code_to_token.endpoint</Parameter>
+        </Key>
+    </Get>
+    <Get assignTo="idp.userinfo.hostname">
+        <Key>
+            <Parameter>idp.userinfo.hostname</Parameter>
+        </Key>
+    </Get>
+    <Get assignTo="idp.userinfo.endpoint">
+        <Key>
+            <Parameter>idp.userinfo.endpoint</Parameter>
+        </Key>
+    </Get>
+    <Get assignTo="idp.jwks.hostname">
+        <Key>
+            <Parameter>idp.jwks.hostname</Parameter>
+        </Key>
+    </Get>
+    <Get assignTo="idp.jwks.endpoint">
+        <Key>
+            <Parameter>idp.jwks.endpoint</Parameter>
+        </Key>
+    </Get>
+    <Get assignTo="idp.atz_code.hostname">
+        <Key>
+            <Parameter>idp.atz_code.hostname</Parameter>
+        </Key>
+    </Get>
+    <Get assignTo="idp.atz_code.endpoint">
+        <Key>
+            <Parameter>idp.atz_code.endpoint</Parameter>
+        </Key>
+    </Get>
+    <Get assignTo="idp.issuer">
+        <Key>
+            <Parameter>idp.issuer</Parameter>
+        </Key>
+    </Get>
+    <Get assignTo="idp.subject">
+        <Key>
+            <Parameter>idp.subject</Parameter>
+        </Key>
+    </Get>
+    <Scope>environment</Scope>
+</KeyValueMapOperations>

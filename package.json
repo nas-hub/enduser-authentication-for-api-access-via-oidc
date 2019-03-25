@@ -1,0 +1,19 @@
+{
+  "name": "IdP_Pattern_1A_OIDC",
+  "version": "1.0.0",
+  "description": "Deploy configurations, shared flows and proxies required for IdP Pattern 1A with OIDC",
+  "main": "setup.js",
+  "scripts": {
+    "start": "npm install && node setup.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "engines": {
+    "node": ">=8.0.0"
+  },
+  "dependencies": {
+    "maven": "latest",
+    "replace-in-file": "latest",
+    "prompt": "latest"
+  }
+}

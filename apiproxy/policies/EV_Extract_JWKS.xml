@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ExtractVariables async="false" continueOnError="false" enabled="true" name="EV_Extract_JWKS">
+    <DisplayName>EV_Extract_JWKS</DisplayName>
+    <Source>JWKS.Response</Source>
+    <JSONPayload>
+        <Variable name="jwks_payload" type="string">
+            <JSONPath>$</JSONPath>
+        </Variable>
+    </JSONPayload>
+</ExtractVariables>

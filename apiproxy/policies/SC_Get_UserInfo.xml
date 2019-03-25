@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ServiceCallout async="false" continueOnError="false" enabled="true" name="SC_Get_UserInfo">
+    <DisplayName>SC_Get_UserInfo</DisplayName>
+    <Properties/>
+    <Request clearPayload="true" variable="myGetUserInfoRequest">
+        <Set>
+            <Headers>
+                <Header name="Authorization">Bearer {access_token}</Header>
+            </Headers>
+        </Set>
+        <IgnoreUnresolvedVariables>false</IgnoreUnresolvedVariables>
+    </Request>
+    <Response>calloutUserInfoResponse</Response>
+    <HTTPTargetConnection>
+        <Properties/>
+        <URL>https://{idp.userinfo.hostname}/{idp.userinfo.endpoint}</URL>
+    </HTTPTargetConnection>
+</ServiceCallout>

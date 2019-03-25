@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ProxyEndpoint name="default">
+    <Description/>
+    <FaultRules/>
+    <PreFlow name="PreFlow">
+        <Request/>
+        <Response/>
+    </PreFlow>
+    <Flows>
+        <Flow name="InitiateIdPRedirect">
+            <Description/>
+            <Request>
+                <Step>
+                    <Name>VA_Verify_Client_Id</Name>
+                </Step>
+                <Step>
+                    <Name>PC_Store_Request_Info</Name>
+                </Step>
+                <Step>
+                    <Name>KV_Retrieve_IdP_Info</Name>
+                </Step>
+                <Step>
+                    <Name>PC_Store_Request_Target</Name>
+                </Step>
+            </Request>
+            <Response>
+                <Step>
+                    <Name>AM_Send_Redirect</Name>
+                </Step>
+            </Response>
+            <Condition>(proxy.pathsuffix MatchesPath "/authorize") and (request.verb = "GET")</Condition>
+        </Flow>
+        <Flow name="IdpCallback">
+            <Description/>
+            <Request>
+                <Step>
+                    <Name>LC_Lookup_StateId_and_ClientId</Name>
+                </Step>
+                <Step>
+                    <Name>VA_Verify_ClientInfo</Name>
+                </Step>
+                <Step>
+                    <Name>RF_BadRequest_NoAuthorizationCode</Name>
+                    <Condition>(request.queryparam.code == null) and (originalClientId == null)</Condition>
+                </Step>
+                <Step>
+                    <Name>KV_Retrieve_IdP_Info</Name>
+                </Step>
+                <Step>
+                    <Name>BA_Add_ClientID_Secret_ATZ_Header</Name>
+                </Step>
+                <Step>
+                    <Name>SC_Exchange_AccessToken_For_Code</Name>
+                </Step>
+                <Step>
+                    <Name>EV_Read_AccessToken_And_IdToken</Name>
+                </Step>
+                <Step>
+                    <Name>LC_Lookup_Cache_JWKS</Name>
+                </Step>
+                <Step>
+                    <Name>VJ_Verify_IdP_Issued_IdToken</Name>
+                </Step>
+                <Step>
+                    <Name>SC_Get_Latest_JWKS</Name>
+                    <Condition>(jwt.Verify_IdP_Issued_IdToken.valid == false)</Condition>
+                </Step>
+                <Step>
+                    <Name>EV_Extract_JWKS</Name>
+                    <Condition>(jwt.Verify_IdP_Issued_IdToken.valid == false)</Condition>
+                </Step>
+                <Step>
+                    <Name>VJ_Verify_IdP_Issued_IdToken_With_Latest_JWKS</Name>
+                    <Condition>(jwt.Verify_IdP_Issued_IdToken.valid == false)</Condition>
+                </Step>
+                <Step>
+                    <Name>PC_Cache_JWKS</Name>
+                    <Condition>(jwt.Verify_IdP_Issued_IdToken.valid == false)</Condition>
+                </Step>
+                <Step>
+                    <Name>SC_Get_UserInfo</Name>
+                </Step>
+                <Step>
+                    <Name>EV_Extract_UserInfo</Name>
+                </Step>
+                <Step>
+                    <Name>AM_Remove_ATZ_Header</Name>
+                </Step>
+                <Step>
+                    <Name>AM_Set_Request_OAuth</Name>
+                </Step>
+                <Step>
+                    <Name>OA_OAuthToken_Response</Name>
+                </Step>
+            </Request>
+            <Response>
+                <Step>
+                    <Name>LC_Lookup_State_Target</Name>
+                </Step>
+                <Step>
+                    <Name>AM_Send_Redirect_To_Target</Name>
+                </Step>
+            </Response>
+            <Condition>(proxy.pathsuffix MatchesPath "/oidc/cb")</Condition>
+        </Flow>
+        <Flow name="TokenInfo">
+            <Description/>
+            <Request>
+                <Step>
+                    <Name>GO_Get_Token_Info</Name>
+                </Step>
+            </Request>
+            <Response>
+                <Step>
+                    <Name>AM_Get_Token_Info</Name>
+                </Step>
+            </Response>
+            <Condition>(proxy.pathsuffix MatchesPath "/tokeninfo") and (request.verb = "GET")</Condition>
+        </Flow>
+        <Flow name="ProtectedService">
+            <Description/>
+            <Request>
+                <Step>
+                    <Name>OA_OAuth_v20_1</Name>
+                </Step>
+            </Request>
+            <Response>
+                <Step>
+                    <Name>AM_Access_Granted</Name>
+                </Step>
+            </Response>
+            <Condition>(proxy.pathsuffix MatchesPath "/protected") and (request.verb = "GET")</Condition>
+        </Flow>
+        <Flow name="CORS_OPTIONS">
+            <Description/>
+            <Request/>
+            <Response>
+                <Step>
+                    <Name>AM_Add_CORS</Name>
+                </Step>
+            </Response>
+            <Condition>(proxy.pathsuffix MatchesPath "/tokeninfo") and (request.verb = "OPTIONS")</Condition>
+        </Flow>
+    </Flows>
+    <PostFlow name="PostFlow">
+        <Request/>
+        <Response>
+            <Step>
+                <Name>AM_Add_CORS</Name>
+            </Step>
+        </Response>
+    </PostFlow>
+    <HTTPProxyConnection>
+        <BasePath>@proxy_basepath@</BasePath>
+        <Properties/>
+        <VirtualHost>secure</VirtualHost>
+    </HTTPProxyConnection>
+    <RouteRule name="noroute"/>
+</ProxyEndpoint>

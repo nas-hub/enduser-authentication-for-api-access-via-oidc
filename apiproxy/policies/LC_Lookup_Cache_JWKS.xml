@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<LookupCache async="false" continueOnError="false" enabled="true" name="LC_Lookup_Cache_JWKS">
+    <DisplayName>LC_Lookup_Cache_JWKS</DisplayName>
+    <Properties/>
+    <CacheKey>
+        <Prefix>JWKS_CACHE</Prefix>
+        <KeyFragment ref="idp.issuer"/>
+        <KeyFragment>jwks_payload</KeyFragment>
+    </CacheKey>
+    <CacheResource>JWKS_CACHE</CacheResource>
+    <Scope>Exclusive</Scope>
+    <AssignTo>jwks_payload</AssignTo>
+</LookupCache>

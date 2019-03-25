@@ -1,0 +1,64 @@
+{
+   "IdP_Pattern_1A_OIDC":{
+      "id":"IdP_Pattern_1A_OIDC",
+      "usecaseId":"IdP_Pattern_1A_OIDC",
+      "usecaseName":"IdP based End-User Authentication : OIDC",
+      "usecaseCaption":"IdP based End-User Authentication : OIDC",
+      "configItems":[
+         {
+            "key":"clientId",
+            "value":"",
+            "required":true,
+            "type":"string",
+            "advanced":false,
+            "info":"Apigee Client Id refers to the IdP Client Id",
+            "caption":"Client Id"
+         },
+         {
+            "key":"hostName",
+            "value":"",
+            "required":true,
+            "type":"string",
+            "advanced":false,
+            "info":"Apigee Hostname refers to the Apigee Virtual Host",
+            "caption":"Hostname"
+         },
+         {
+            "key":"tokenURI",
+            "value":"",
+            "required":true,
+            "type":"string",
+            "advanced":false,
+            "info":"The URI for requesting Tokens from Apigee",
+            "caption":"Token URI"
+         },
+         {
+            "key":"tokenInfoURI",
+            "value":"",
+            "required":false,
+            "type":"string",
+            "advanced":true,
+            "info":"The URI for requesting Token Info from Apigee.",
+            "caption":"Token Info URI"
+         },
+         {
+            "key":"protectedApiURI",
+            "value":"",
+            "required":false,
+            "type":"string",
+            "advanced":true,
+            "info":"The URI of a protected API on Apigee that is allowed access for this client.",
+            "caption":"Protected API URI for the above ClientId"
+         },
+         {
+            "key":"noAccessApiURI",
+            "value":"",
+            "required":false,
+            "type":"string",
+            "advanced":true,
+            "info":"The URI of a protected API on Apigee that is NOT allowed access for this client.",
+            "caption":"Protected API URI with NO access to this ClientId"
+         }
+      ]
+   }
+}

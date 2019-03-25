@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<OAuthV2 async="false" continueOnError="false" enabled="true" name="OA_OAuthToken_Response">
+    <DisplayName>OA_OAuthToken_Response</DisplayName>
+    <Attributes>
+        <Attribute name="subject.preferred_username" ref="subject.preferred_username" display="true"/>
+        <Attribute name="subject.email" ref="subject.email" display="true"/>
+        <Attribute name="subject.sub" ref="subject.sub" display="true"/>
+        <Attribute name="subject.name" ref="subject.name" display="true"/>
+        <Attribute name="subject.locale" ref="subject.locale" display="true"/>
+        <Attribute name="subject.family_name" ref="subject.family_name" display="true"/>
+        <Attribute name="subject.given_name" ref="subject.given_name" display="true"/>
+        <Attribute name="subject.idp.token" ref="access_token" display="true"/>
+        <Attribute name="subject.idp.id_token" ref="id_token" display="true"/>
+        <Attribute name="subject.idp.token.expires_in" ref="expires_in" display="true"/>
+        <Attribute name="subject.idp.method" ref="idp.audience" display="true"/>
+        <Attribute name="subject.issuer" ref="idp.issuer" display="true"/>
+        <Attribute name="subject.idp.id" ref="jwt.Verify_IdP_Issued_IdToken.claim.subject" display="true"/>
+    </Attributes>
+    <StoreToken>true</StoreToken>
+    <Operation>GenerateAccessToken</Operation>
+    <ExpiresIn>1800000</ExpiresIn>
+    <!-- 30 minutes -->
+    <SupportedGrantTypes>
+        <GrantType>client_credentials</GrantType>
+        <GrantType>password</GrantType>
+    </SupportedGrantTypes>
+    <GenerateResponse enabled="false"/>
+</OAuthV2>
