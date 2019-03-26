@@ -145,11 +145,12 @@ At this point the solution should be deployed on your Apigee Org, and should be 
 5. Clicking the Login Button will initiate a OIDC based login with your Identity Provider via Apigee. You can also turn on the **trace** for this proxy on Apigee to see the proxy functionality.
 6. At this point you should have Access Token issued by Apigee and should be able to introspect the token, as well as invoke APIs with this token.
 
-### Troubleshooting
+### Report Issues
+ 
+ [Please report issues here](https://github.com/nas-hub/enduser-authentication-for-api-access-via-oidc/issues/new)
 
 
-### Feedback & Survey
 
-If you have any feedback or need additional features you want to add to this solution please 
+
 
 
