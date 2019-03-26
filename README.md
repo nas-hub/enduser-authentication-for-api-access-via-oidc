@@ -1,5 +1,5 @@
 
-# End-user Authentication for API Access via OpenId Connect ([OIDC](https://openid.net/developers/specs/)).
+# End-user Authentication for API access via OpenId Connect ([OIDC](https://openid.net/developers/specs/)).
 
 
 A deployable solution implementing the [end-user Authentication for API Access Reference Architecture](https://apigeedemo.net/config)
