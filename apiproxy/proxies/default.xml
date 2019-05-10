@@ -60,22 +60,23 @@
                 </Step>
                 <Step>
                     <Name>VJ_Verify_IdP_Issued_IdToken</Name>
+                    <Condition>(lookupcache.LC_Lookup_Cache_JWKS.cachehit == true)</Condition>
                 </Step>
                 <Step>
                     <Name>SC_Get_Latest_JWKS</Name>
-                    <Condition>(jwt.Verify_IdP_Issued_IdToken.valid == false)</Condition>
+                     <Condition>(jwt.Verify_IdP_Issued_IdToken.valid == false) OR (lookupcache.LC_Lookup_Cache_JWKS.cachehit == false)</Condition>
                 </Step>
                 <Step>
                     <Name>EV_Extract_JWKS</Name>
-                    <Condition>(jwt.Verify_IdP_Issued_IdToken.valid == false)</Condition>
+                     <Condition>(jwt.Verify_IdP_Issued_IdToken.valid == false) OR (lookupcache.LC_Lookup_Cache_JWKS.cachehit == false)</Condition>
                 </Step>
                 <Step>
                     <Name>VJ_Verify_IdP_Issued_IdToken_With_Latest_JWKS</Name>
-                    <Condition>(jwt.Verify_IdP_Issued_IdToken.valid == false)</Condition>
+                     <Condition>(jwt.Verify_IdP_Issued_IdToken.valid == false) OR (lookupcache.LC_Lookup_Cache_JWKS.cachehit == false)</Condition>
                 </Step>
                 <Step>
                     <Name>PC_Cache_JWKS</Name>
-                    <Condition>(jwt.Verify_IdP_Issued_IdToken.valid == false)</Condition>
+                     <Condition>(jwt.Verify_IdP_Issued_IdToken.valid == false) OR (lookupcache.LC_Lookup_Cache_JWKS.cachehit == false)</Condition>
                 </Step>
                 <Step>
                     <Name>SC_Get_UserInfo</Name>

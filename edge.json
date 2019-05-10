@@ -96,10 +96,10 @@
          ]
       }
    },
-   "orgConfig":{
+    "orgConfig":{
       "apiProducts":[
          {
-            "name":"IdP-Pattern-1A-OIDC-Identity-Service",
+            "name":"@api_product_name@",
             "apiResources":[
                "/",
                "/**"
@@ -108,11 +108,11 @@
             "attributes":[
                {
                   "name":"description",
-                  "value":"IdP Pattern 1A OIDC Identity Service"
+                  "value":"@api_product_name@"
                }
             ],
-            "description":"IdP Pattern 1A OIDC Identity Service",
-            "displayName":"IdP Pattern 1A OIDC Identity Service",
+            "description":"@api_product_name@",
+            "displayName":"@api_product_name@",
             "environments":[
                "@env@"
             ],
@@ -129,21 +129,21 @@
       ],
       "developers":[
          {
-            "email":"idpUser@example.com",
-            "firstName":"IdP",
-            "lastName":"User",
-            "userName":"idpUser",
+            "email":"demodev@acme.com",
+            "firstName":"demo",
+            "lastName":"dev",
+            "userName":"demodev",
             "attributes":[
 
             ]
          }
       ],
       "developerApps":{
-         "idpUser@example.com":[
+         "demodev@acme.com":[
             {
-               "name":"IdP-Pattern-1A-OIDC-Identity-Service-App",
+               "name":"@api_app_name@",
                "apiProducts":[
-                  "IdP-Pattern-1A-OIDC-Identity-Service"
+                  "@api_product_name@"
                ],
                "callbackUrl":"",
                "scopes":[

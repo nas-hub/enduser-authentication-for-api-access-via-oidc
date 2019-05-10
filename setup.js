@@ -32,6 +32,16 @@ var schema = {
         message: colors.red("Key Value Map name cannot be empty!"),
         required: true
       },
+        api_product_name: {
+        description: colors.yellow("Enter API Product name to this proxy."),
+        message: colors.red("Key Value API Product name cannot be empty!"),
+        required: true
+      },
+     api_app_name: {
+        description: colors.yellow("Enter Developer Application name to this proxy."),
+        message: colors.red("Key Value Developer Application name cannot be empty!"),
+        required: true
+      },
       username: {
         description: colors.yellow("Please provide the Apigee Edge username"),
         message: colors.red("Apigee Edge username cannot be empty!"),
