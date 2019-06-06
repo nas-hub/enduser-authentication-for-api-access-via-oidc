@@ -14,6 +14,7 @@ A deployable solution implementing the [end-user Authentication for API Access R
 Any Identity Provider that supports OIDC. This solution has been tested with the following Identity Providers:
 
 - [Google IAM](https://developers.google.com/identity/protocols/OpenIDConnect).
+- [ForgeRock](https://backstage.forgerock.com/docs/am/6.5/oidc1-guide/#chap-oidc1-introduction).
 - [Okta](https://developer.okta.com/docs/api/resources/oidc/#endpoints)
 - [PingFederate](https://documentation.pingidentity.com/pingfederate/pf84/#adminGuide/concept/openIdConnect.html) 
 
@@ -65,7 +66,7 @@ Apigee is the API platform
 ## Pre-Requisites:  
 #### Identity Provider Configuration
 You need your Identity Provider have Apigee registered as OpenId Connect relying party.
-Refer the setup instructions for following Identity Providers: [Okta](https://developer.okta.com/docs/api/resources/oidc/#endpoints), [Ping](https://documentation.pingidentity.com/pingfederate/pf84/#adminGuide/concept/openIdConnect.html) and [Google](https://developers.google.com/identity/protocols/OpenIDConnect).
+Refer the setup instructions for following Identity Providers: [ForgeRock](https://backstage.forgerock.com/docs/am/6.5/oidc1-guide/#chap-oidc1-introduction), [Okta](https://developer.okta.com/docs/api/resources/oidc/#endpoints), [Ping](https://documentation.pingidentity.com/pingfederate/pf84/#adminGuide/concept/openIdConnect.html) and [Google](https://developers.google.com/identity/protocols/OpenIDConnect).
 
 
 #### You will need the following information from Identity Provider:
