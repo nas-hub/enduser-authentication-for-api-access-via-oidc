@@ -91,7 +91,7 @@
                     <Name>AM_Set_Request_OAuth</Name>
                 </Step>
                 <Step>
-                    <Name>OA_OAuthToken_Response</Name>
+                    <Name>OA_Generate_OAuthToken</Name>
                 </Step>
             </Request>
             <Response>
@@ -113,7 +113,7 @@
             </Request>
             <Response>
                 <Step>
-                    <Name>AM_Get_Token_Info</Name>
+                    <Name>AM_Token_Info</Name>
                 </Step>
             </Response>
             <Condition>(proxy.pathsuffix MatchesPath "/tokeninfo") and (request.verb = "GET")</Condition>

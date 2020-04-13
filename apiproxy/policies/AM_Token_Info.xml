@@ -1,0 +1,22 @@
+<AssignMessage name="AM_Token_Info">
+    <Set>
+        <Payload contentType="application/json">{
+    "access_token":"{oauthv2accesstoken.GO_Get_Token_Info.access_token}",
+    "expires_in":"{oauthv2accesstoken.GO_Get_Token_Info.expires_in}",
+    "refresh_token":"{oauthv2accesstoken.GO_Get_Token_Info.refresh_token}",
+    "refresh_token_expires_in":"{oauthv2accesstoken.GO_Get_Token_Info.refresh_token_expires_in}",
+    "developer_id":"{oauthv2accesstoken.GO_Get_Token_Info.developer.id}",
+    "developer_email":"{oauthv2accesstoken.GO_Get_Token_Info.developer.email}",
+    "api_product_list":"{oauthv2accesstoken.GO_Get_Token_Info.api_product_list}",
+    "developer_app_name":"{oauthv2accesstoken.GO_Get_Token_Info.developer.app.name}",
+    "scope":"{oauthv2accesstoken.GO_Get_Token_Info.scope}",
+    "client_id":"{oauthv2accesstoken.GO_Get_Token_Info.client_id}",
+    "subject.idp.issuer":"{oauthv2accesstoken.GO_Get_Token_Info.accesstoken.subject.idp.issuer}",
+    "subject.idp.id":"{oauthv2accesstoken.GO_Get_Token_Info.accesstoken.subject.idp.id}",
+    "subject.idp.method":"{oauthv2accesstoken.GO_Get_Token_Info.accesstoken.subject.idp.method}",
+    "subject.name":"{oauthv2accesstoken.GO_Get_Token_Info.accesstoken.subject.name}"
+}
+        </Payload>
+    </Set>
+    <IgnoreUnresolvedVariables>true</IgnoreUnresolvedVariables>
+</AssignMessage>
